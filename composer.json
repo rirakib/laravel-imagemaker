@@ -1,0 +1,40 @@
+{
+    "name": "imagemaker/imagemaker",
+    "description": "A Laravel package for image upload, retrieval, resizing, placeholder generation, and thumbnail management.",
+    "type": "library",
+    "license": "MIT",
+    "version": "1.0.0",
+    "keywords": [
+        "Laravel",
+        "image processing",
+        "image upload",
+        "thumbnail",
+        "placeholder",
+        "resize image",
+        "imagemaker"
+    ],
+    "authors": [
+        {
+            "name": "Rakibul Islam",
+            "email": "rirrakib10@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "ImageMaker\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ImageMaker\\ImageMakerServiceProvider"
+            ]
+        }
+    },
+    "support": {
+        "issues": "https://github.com/rirakib/imagemaker/issues",
+        "source": "https://github.com/rirakib/imagemaker"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
