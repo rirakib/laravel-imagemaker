@@ -32,8 +32,7 @@
         }
     },
     "support": {
-        "issues": "https://github.com/rirakib/imagemaker/issues",
-        "source": "https://github.com/rirakib/imagemaker"
+        "source": "https://github.com/rirakib/laravel-imagemaker"
     },
     "minimum-stability": "dev",
     "prefer-stable": true
