@@ -3,7 +3,7 @@
     "description": "A Laravel package for image upload, retrieval, resizing, placeholder generation, and thumbnail management.",
     "type": "library",
     "license": "MIT",
-    "version": "1.0.0", 
+    "version": "1.0.1",
     "keywords": [
         "Laravel",
         "image processing",

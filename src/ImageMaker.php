@@ -167,7 +167,6 @@ class ImageMaker
      */
     public function getImage($path, $filename, $size = '100x100', $thumb = false)
     {
-
         // Construct the storage path
         $storagePath = $path . '/' . $filename;
 
@@ -189,15 +188,15 @@ class ImageMaker
         return $this->generatePlaceholderImage((int)$width, (int)$height);
     }
 
-    /**
-     * Generate a placeholder image with specified dimensions and optional background color.
-     *
-     * @param int $width
-     * @param int $height
-     * @param array $color
-     * @return string
-     * @throws Exception
-     */
+   /**
+ * Generate a placeholder image with specified dimensions and optional background color.
+ *
+ * @param int $width
+ * @param int $height
+ * @param array $color
+ * @return string
+ * @throws Exception
+ */
     public function generatePlaceholderImage($width, $height, $color = [200, 200, 200])
     {
         // Create a blank image
@@ -236,13 +235,19 @@ class ImageMaker
         // Write the text to the image
         imagettftext($image, $fontSize, 0, $x, $y, $textColor, $fontPath, $text);
 
+        // Define the placeholder directory and ensure it exists
+        $placeholderDir = 'placeholders';
+        if (!Storage::disk($this->disk)->exists($placeholderDir)) {
+            Storage::disk($this->disk)->makeDirectory($placeholderDir);
+        }
+
         // Save the placeholder image
-        $placeholderPath = "placeholders/{$width}x{$height}.png"; // Save it in the placeholders directory
+        $placeholderPath = "{$placeholderDir}/{$width}x{$height}.png"; // Save it in the placeholders directory
         imagepng($image, Storage::disk($this->disk)->path($placeholderPath));
 
         // Free up memory
         imagedestroy($image);
 
-        return Storage::url($placeholderPath); // Return the URL of the placeholder image
+        return Storage::url($placeholderPath);
     }
 }
